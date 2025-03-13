@@ -1,0 +1,76 @@
+<meta name="viewport" content="width=device-width,initial- scale=1">
+<link rel="stylesheet"href="w3.css">
+
+
+
+<form name=form>
+<script>
+function proses()
+{
+kotatujuan=document.form.kotatujuan.value;
+if(kotatujuan=="BANDUNG") hargatiket=75000;
+if(kotatujuan=="JAKARTA") hargatiket=125000;
+if(kotatujuan=="CIREBON") hargatiket=150000;
+if(kotatujuan=="SEMARANG") hargatiket=240000;
+document.form.hargatiket.value=hargatiket;
+
+hargafasilitas=0;
+if(document.form.makan.checked) hargafasilitas+=25000;
+if(document.form.minum.checked) hargafasilitas+=10000;
+if(document.form.wifi.checked) hargafasilitas+=5000;
+if(document.form.ac.checked) hargafasilitas+=10000;
+
+
+document.form.hargafasilitas.value=hargafasilitas;
+ 
+ jumlah=document.form.jumlah.value;
+totalharga= hargatiket + hargafasilitas * jumlah;
+document.form.totalharga.value=totalharga;
+
+}
+</script>
+
+<div class="w3-container">
+  <div class="w3-panel w3-red">
+  
+<center>
+<h1>PROGRAM PENJUALAN TIKET KA
+</div>
+<hr>
+<div class="w3-panel w3-cyan">
+<center>
+<table>
+<tr><td>NAMA PEMESANAN<td>:<input type text name=namapemesan size=20>
+<tr><td>KOTA TUJUAN <td>:<select name=kotatujuan>
+<option>BANDUNG
+<option>JAKARTA
+<option>CIREBON
+<option>SEMARANG
+</select>
+<tr><td>FASILITAS<td><input type=checkbox name=makan>MAKAN
+<tr><td>FASILITAS<td><input type=checkbox name=minum>MINUM
+<tr><td>FASILITAS<td><input type=checkbox name=wifi>WIFI
+<tr><td>FASILITAS<td><input type=checkbox name=ac>AC
+<tr><td>JUMLAH PAKET<td><input type=radio name=jumlah value=1>1
+<input type=radio name=jumlah value=2>2
+<input type=radio name=jumlah value=3>3
+<tr><td colspan=2><hr>
+<tr><td>HARGA TIKET<td><input type=text name=hargatiket size=10>
+<tr><td>HARGA FASILITAS<td><input type=text name=hargafasilitas size=10>
+<tr><td>TOTAL HARGA <td><input type=text name=totalharga size=10>
+<tr><td colspan=2><hr>
+</center>
+</table>
+</div>
+ 
+ <div class="w3-panel w3-aqua">
+ <p>
+ <center>
+<input type=button value="Proses" onclick="proses()" class="w3-btn w3-red w3-round-xxlarge" style="width:200px">
+<input type=reset value="Reset" class="w3-btn w3-red w3-round-xxlarge" style="width:200px">
+</p>
+</center>
+</div>
+</div>
+
+

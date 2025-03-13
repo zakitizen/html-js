@@ -1,0 +1,108 @@
+<meta name="viewport" content="width=device-width,initial- scale=1">
+<link rel="stylesheet"href="w3.css">
+
+
+
+<form name=form>
+<script>
+function proses()
+{
+  merk=document.form.merk.value;
+  hardisk=document.form.hardisk.value;
+  if(merk=="ACER")
+  {
+	if(hardisk=="1") hargalaptop=5000000;
+	if(hardisk=="2") hargalaptop=6000000;
+	if(hardisk=="3") hargalaptop=7000000;
+  }
+  if(merk=="LENOVO")
+  {
+	if(hardisk=="1") hargalaptop=4000000;
+	if(hardisk=="2") hargalaptop=5000000;
+	if(hardisk=="3") hargalaptop=6000000;
+  }
+  if(merk=="HP")
+  {
+	if(hardisk=="1") hargalaptop=6000000;
+	if(hardisk=="2") hargalaptop=7000000;
+	if(hardisk=="3") hargalaptop=9000000;
+  }
+  document.form.hargalaptop.value=hargalaptop;
+  
+  jumlah=document.form.jumlah.value;
+  total=hargalaptop*jumlah;
+  document.form.total.value=total;
+  pembayaran=document.form.pembayaran.value;
+  diskon=0;
+  tambahan=0;
+ if(pembayaran=="cash") 
+ {
+    diskon=0.05*total;
+  }
+  
+  if(pembayaran=="kredit") 
+  
+  {
+  tambahan=0.15*total;
+  }
+  document.form.diskon.value=diskon;
+  document.form.tambahan.value=tambahan;
+  total=hargalaptop*jumlah-diskon+tambahan;
+  document.form.total.value=total;
+}
+</script>
+
+<div class="w3-container">
+  <div class="w3-panel w3-red">
+  
+<center>
+<h1>PROGRAM PENJUALAN LAPTOP
+</div>
+<hr>
+<div class="w3-panel w3-cyan">
+<center>
+<table>
+<tr><td>Nama Pemesan<td>:<input type text name=nama size=20>
+<tr><td>Merk <td>:<select name=merk>
+<option>ACER
+<option>LENOVO
+<option>HP
+</select>
+
+<tr><td>HARDISK<td><input type=radio name=hardisk value=1>1TB
+<input type=radio name=hardisk value=2>2TB
+<input type=radio name=hardisk value=3>3TB
+<tr><td>Jumlah <td>:<select name=jumlah>
+<option>1
+<option>2
+<option>3
+<option>4
+<option>5
+</select>
+<tr><td colspan=2><hr>
+<tr><td>PEMBAYARAN<td><input type=radio name=pembayaran value=cash>Cash
+<input type=radio name=pembayaran value=kredit>Kredit
+
+<tr><td>HARGA LAPTOP<td><input type=text name=hargalaptop size=10>
+<tr><td>ADMINISTRASI<td><input type=text name=tambahan size=10>
+<tr><td>DISKON<td><input type=text name=diskon size=10>
+<tr><td>TOTAL HARGA<td><input type=text name=total size=10>
+<tr><td>BONUS<td><input type=radio name=bonus value=memory>MEMORY 32 GB
+<input type=radio name=bonus value=flashdisk>FLASHDISK 64 GB
+<input type=radio name=bonus value=ssd>SSD EXTERNAL 500 GB
+<tr><td colspan=2><hr>
+</center>	
+</table>
+</div>
+ 
+ <div class="w3-panel w3-aqua">
+ <p>
+ <center>
+<input type=button value="Proses" onclick="proses()" class="w3-btn w3-red w3-round-xxlarge" style="width:200px">
+<input type=reset value="Reset" class="w3-btn w3-red w3-round-xxlarge" style="width:200px">
+</p>
+</center>
+</div>
+</div>
+
+

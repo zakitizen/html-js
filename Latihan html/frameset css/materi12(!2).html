@@ -1,0 +1,65 @@
+<meta name="viewport" content="width=device-width,initial- scale=1">
+<link rel="stylesheet"href="w3.css">
+
+<div class="w3-container w3-blue w3-animate-zoom">
+<div class="w3-panel w3-red w3-round-xxlarge w3-card-4 w3-zoom">
+  
+<html>
+<center>
+<h1>TABEL GAJI KARYAWAN  PT HAYANG UNTUNG MBUNG RUGI</h1>
+</div>
+
+<head>
+  
+  <title>TABEL KARYAWAN</title>
+</head>
+<body>
+<p>
+  <table class="w3-table-all w3-card-4">
+    <thead>
+	
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Bagian</th>
+        <th>Anak</th>
+		<th>Gaji Pokok</th>
+		<th>TJ ANAK</th>
+		<th>Gaji Total</th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <script>
+        var nama = ["BUDI", "SINTIA", "ASEP", "DINI", "DONY", "SANTI"];
+        var bagian = ["HRD", "PEMASARAN", "OB", "PEMASARAN", "OB", "PEMASARAN"];
+        var anak = [3, 1, 2, 0, 3, 5];
+
+        for (var i = 0; i<6; i++) {
+		
+		if(bagian[i]=="HRD") gajipokok=8000000;
+		if(bagian[i]=="PEMASARAN") gajipokok=5000000;
+		if(bagian[i]=="OB") gajipokok=3000000;
+		if(anak[i]>2) tj =0.05*gajipokok*2;
+		else
+		tj=0.05*gajipokok*anak[i];
+		gajitotal=gajipokok+tj;
+          document.write(
+            "<tr>",
+              "<td>" + (i + 1) + "</td>",
+              "<td>" + nama[i] + "</td>",
+              "<td>" + bagian[i] + "</td>",
+              "<td>" + anak[i] + "</td>",
+              "<td>" + gajipokok + "</td>",
+              "<td>" + tj + "</td>",
+              "<td>" + gajitotal + "</td>",
+            "</tr>"
+          );
+        }
+      </script>
+    </tbody>
+	</div>
+	</p>
+  </table>
+</body>
+</html>

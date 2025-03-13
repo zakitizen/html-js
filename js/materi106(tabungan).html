@@ -1,0 +1,15 @@
+<center>
+<h1>TABEL TABUNGAN MAMIH
+<table border=10>
+<hr>
+<tr><td>BULAN<td>SALDOAWAL<td>BUNGA<td>SALDOAKHIR
+
+<script>
+awal=1000000;
+ for(i=1;i<=12;i++){
+ bunga=0.03*awal;
+ akhir=awal+bunga;
+  document.write("<tr><td>",i,"<td>",awal,"<td>",bunga,"<td>",akhir);
+  awal=akhir;
+  }
+</script>
